@@ -11,7 +11,9 @@ return(
         {props.expenses.map((expense)=>{
             return <ExpenseListItem key={expense.id} expense={expense}/>
         })}
+         {props.expenses.length===0 && <p>No expenses to show</p>}
     </div>
+   
 )}
 
 const mapStateToProps = (state)=>{

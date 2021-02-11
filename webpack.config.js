@@ -1,7 +1,12 @@
 //entry -> endpoint
 const path = require('path');
 
-module.exports={
+module.exports= (env)=>{
+    console.log(env)
+    const isProduction = env =='production'
+    console.log(isProduction)
+return(
+{
     
     entry:'./src/app.js',
     output:{
@@ -28,6 +33,7 @@ module.exports={
         contentBase:path.join(__dirname,'/public'),
         historyApiFallback:true
     },
-    devtool:'cheap-module-eval-source-map'
+    devtool: isProduction ? 'source-map':'cheap-module-eval-source-map'
     
-};
+});
+}
