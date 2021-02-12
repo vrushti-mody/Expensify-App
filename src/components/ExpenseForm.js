@@ -89,7 +89,7 @@ render(){
             value={this.state.note}
             onChange={this.onNoteChange}>
             </textarea>
-            <button onClick={this.onSubmit}>Add Expense</button>
+            <button onClick={this.onSubmit}>{this.props.expense ? 'Edit Expense':'Add Expense'}</button>
 
         </form>
     </div>
