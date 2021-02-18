@@ -6,6 +6,7 @@ import configureStore from './store/configureStore'
 import getVisibleExpenses from './selectors/expenses'
 import {Provider} from 'react-redux'
 import './firebase/firebase'
+import { startSetExpenses } from './actions/expenses'
 
 const store = configureStore()
 const state = store.getState()
@@ -19,7 +20,12 @@ const jsx = (
 )
 
 var appRoot = document.getElementById("app");
-ReactDOM.render(jsx, appRoot);
+ReactDOM.render(<p>Loading...</p>, appRoot);
+
+store.dispatch(startSetExpenses()).then(
+    ReactDOM.render(jsx, appRoot)
+)
+
 
 
  
