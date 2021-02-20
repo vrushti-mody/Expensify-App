@@ -62,16 +62,17 @@ onFocusChange =({focused})=>{
 }
 render(){
     return(
-    <div>
-       { this.state.error && <p>{this.state.error }</p>}
-        <form>
+        <form className="form">
+        { this.state.error && <p className="form__error">{this.state.error }</p>}
             <input type="text"
             placeholder="Enter Title Here"
             autoFocus
+            className="text-input"
             value={this.state.description}
             onChange={this.onDescriptionChange}
             ></input>
             <input type="text"
+            className="text-input"
             placeholder="Enter Amount Here"
             value={this.state.amount}
             onChange={this.onAmountChange}>
@@ -85,14 +86,17 @@ render(){
             isOutsideRange={()=>false}
             />
             <textarea
+            rows="10"
+            className='text-input'
             placeholder="Enter Notes here"
             value={this.state.note}
             onChange={this.onNoteChange}>
             </textarea>
-            <button onClick={this.onSubmit}>{this.props.expense ? 'Edit Expense':'Add Expense'}</button>
+            <div>
+            <button className="button form__button" onClick={this.onSubmit}>{this.props.expense ? 'Edit Expense':'Save Expense'}</button>
+            </div>
 
         </form>
-    </div>
 )
 }
 }

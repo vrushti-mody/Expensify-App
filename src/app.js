@@ -6,6 +6,7 @@ import configureStore from './store/configureStore'
 import getVisibleExpenses from './selectors/expenses'
 import {Provider} from 'react-redux'
 import './firebase/firebase'
+import LoadingPage from './components/LoadingPage'
 import { startSetExpenses } from './actions/expenses'
 import {firebase} from './firebase/firebase'
 import {login, logout} from './actions/auth'
@@ -22,7 +23,7 @@ const jsx = (
 )
 
 var appRoot = document.getElementById("app");
-ReactDOM.render(<p>Loading...</p>, appRoot);
+ReactDOM.render(<LoadingPage/>, appRoot);
 
 let hasRendered = false;
 const renderApp = ()=>{

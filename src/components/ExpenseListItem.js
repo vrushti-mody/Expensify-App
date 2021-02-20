@@ -9,11 +9,18 @@ const ExpenseListItem = (props)=>{
    
     return (
     <div>
-        <Link to ={`/edit/${props.expense.id}`}>
-        <h3>{props.expense.description}</h3>
+        <Link 
+        to ={`/edit/${props.expense.id}`}
+        className="list-item"
+        >
+            <div>
+            <h3 className="list-item__title">{props.expense.description}</h3>
+        <span className="list-item__subtitle">{moment(props.expense.createdAt).format('Do MMMM, YYYY')}</span>
+            </div>
+       
+        <h3 lassName="list-item__data">Rs {numeral(parseFloat((props.expense.amount),10)/100).format('0,0.00')}</h3>
         </Link>
-        <p>Rs {numeral(parseFloat((props.expense.amount),10)/100).format('0,0.00')}</p>
-        <p>{moment(props.expense.createdAt).format('Do MMMM, YYYY')}</p>
+        
        
     </div>
     )

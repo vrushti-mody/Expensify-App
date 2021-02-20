@@ -9,7 +9,12 @@ const EditExpensePage = (props)=>{
     console.log(props)
 return(
     <div>
-        
+         <div className="page-header">
+            <div className="content-container">
+            <h1 className="page-header__title">Edit Expense</h1>
+            </div>
+        </div>
+        <div className="content-container">
         <ExpenseForm 
         expense ={props.expense}
         onSubmit={(expense)=>{
@@ -19,10 +24,13 @@ return(
         }}
         
         />
-         <button onClick={()=>{
+         <button 
+         className= "button form__button button__remove"
+         onClick={()=>{
         props.dispatch(startRemoveExpense({id:props.expense.id}))
         props.history.push('/')
-    }}>Remove</button>
+    }}>Remove Expense</button>
+    </div>
     </div>
 )}
 

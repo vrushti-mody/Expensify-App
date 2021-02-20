@@ -1,0 +1,25 @@
+.button{
+ background: #6A0DAD;
+ border: none;   
+ color: white;
+ padding: $s-size;
+ font-weight: 300 ;
+ font-size: 1.8rem;
+ margin-top: 30px;
+ display: inline-block;
+ text-decoration: none;
+ line-height: 1;
+}
+
+.button--link{
+    background: none;
+    margin-top: 0;
+
+}
+
+.button__remove{
+    background: #888888;
+    margin-top: 0;
+    margin-bottom: 50px;
+   
+}
