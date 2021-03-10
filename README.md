@@ -21,7 +21,7 @@ Looking for an expense and budget tool? Stop searching. Expense Manager is simpl
 - Sort Expenses by Amount, Date, Text, StartDate and Enddate
 - Simple Google Authentication
 
-## Tech Stack
+## Technology Stack
 ![Languages](https://img.shields.io/github/languages/count/vrushti-mody/Expensify-App)
 - Javascript
 - React
